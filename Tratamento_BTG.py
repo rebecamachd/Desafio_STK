@@ -1,4 +1,5 @@
 ### 0. Importação de bibliotecas
+from pathlib import Path
 import requests
 import pandas as pd
 from openpyxl import load_workbook
@@ -86,7 +87,7 @@ def formata_tabelas (df,sheet_name):
 # URL da API
 url = 'https://api.mziq.com/mzfilemanager/v2/d/0afe1b62-e299-4dec-a938-763ebc4e2c11/79c66cca-4d48-0e24-db90-67450e78b597?origin=1'
 cod_sucesso = 200
-diretorio_export = r'C:\Users\rebek\Documents\Desafio_STK'
+diretorio_export = str(Path.cwd())
 nome_arquivo = 'Base_BTG'
 ### 3. Importação e tratamento
 # Baixa o arquivo via API, faz a formatação de cada dataframe e concatena para formar o bando
