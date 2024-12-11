@@ -131,3 +131,11 @@ base.to_csv(rf"{diretorio_export}\{'Base_BTG_completa'}.csv", index = False, enc
 
 #tabela filtrada (2023) - entendi que a dinamica era pegar os dados de 2023 
 base[colunas].to_csv(rf"{diretorio_export}\{'Base_BTG_23'}.csv", index = False, encoding = "utf-8-sig",sep=';',decimal=',')
+
+### Deletar o arquivo temporário
+temp_file = Path("temp.xlsx")
+if temp_file.exists():
+    temp_file.unlink()
+    print("Arquivo temporário 'temp.xlsx' deletado com sucesso.")
+else:
+    print("Arquivo temporário 'temp.xlsx' não encontrado para deletar.")
